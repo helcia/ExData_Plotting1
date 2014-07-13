@@ -9,7 +9,6 @@ unzip("household_power_consumption.zip")
 powerdata<-read.csv("./data/household_power_consumption.csv",header = TRUE, na.strings="?")
 
 powerdata$Date<-as.Date(powerdata$Date, format="%d/%m/%Y")
-#y<-powerdata
 
 subpowera<-subset(powerdata,powerdata$Date <"2007-2-3")
 subpower<-subset(subpowera,subpowera$Date > "2007-1-31")
@@ -31,8 +30,8 @@ plot (dataplot2$datetime,dataplot2$Voltage,type="l",main = "" , xlab = "datetime
 plot(dataplot2$datetime, dataplot2$Sub_metering_1, type="l",xlab = "", ylab="Energy sub metering",)
 lines(dataplot2$datetime, dataplot2$Sub_metering_2, type="l", col=2)
 lines(dataplot2$datetime, dataplot2$Sub_metering_3, type="l", col=4)
-legend("topright",col=c("black","red","blue"),legend=c("Sub_metering_1", "Sub_metering_2","Sub_metering_3"),lty=1,bty="n",cex=0.6)
-
+#legend("topright",col=c("black","red","blue"),legend=c("Sub_metering_1", "Sub_metering_2","Sub_metering_3"),lty=1,bty="n",cex=0.6)
+legend(1170390000.60,38,col=c("black","red","blue"),legend=c("Sub_metering_1", "Sub_metering_2","Sub_metering_3"),lty=1,bty="n",cex=0.6)
 #bottom right
 plot(dataplot2$datetime, dataplot2$Global_reactive_power, type="l", ylab="Global_reactive_power",sub=NULL,xlab = "datetime")
 

@@ -9,7 +9,6 @@ unzip("household_power_consumption.zip")
 powerdata<-read.csv("./data/household_power_consumption.csv",header = TRUE, na.strings="?")
 
 powerdata$Date<-as.Date(powerdata$Date, format="%d/%m/%Y")
-#y<-powerdata
 
 subpowera<-subset(powerdata,powerdata$Date <"2007-2-3")
 subpower<-subset(subpowera,subpowera$Date > "2007-1-31")
